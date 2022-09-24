@@ -7,7 +7,7 @@ List<string> personProperties = new Person().GetType().GetProperties().Select(p 
 List<string> petProperties = new Pet().GetType().GetProperties().Select(p => p.Name).ToList();
 
 //Get list of common property names from both lists
-var commonProperties = petProperties.Intersect(personProperties);
+List<string> commonProperties = petProperties.Intersect(personProperties).ToList();
 
 foreach (string propertyName in commonProperties)
     Console.WriteLine(propertyName);
